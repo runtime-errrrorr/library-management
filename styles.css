@@ -1,0 +1,258 @@
+/* @import "modern-normalize"; */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+  margin: 0;
+}
+
+ol[role="list"], ul[role="list"] {
+  list-style: none;
+  padding-inline: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(25%,350px) 1fr;
+    background-color: #B2C9AD;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    background-color: #4B5945;
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 60px 300px 180px minmax(20px,100%);
+    gap: 50px;
+    font-size: x-large;
+    color: white;
+}
+
+.dash,
+.quick-access,
+.support,
+.addBook{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 60px;
+}
+
+.dash{
+    padding-top: 15px;
+}
+
+.logo{
+    display: grid;
+    place-items: center;
+}
+
+.def{
+    display: grid;
+    align-items: center;
+}
+
+
+svg{
+    max-width: 30px;
+    max-height: 30px;
+    fill: white;
+
+}
+
+.dash svg{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.dash div{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.logo:hover svg,
+.def:hover {
+    color: #333; /* Slightly darker text for "Add Book" */
+    fill: #333;  /* Slightly darker color for SVG */
+    cursor: pointer;
+    transition: color 0.2s, fill 0.2s;
+}
+
+form{
+    padding: 20px;
+    width: 600px;
+    height: auto;
+
+    display: grid;
+    grid-template-rows: 1fr 25px;
+    gap: 5px;
+}
+
+input{
+    height: 35px;
+    border-radius: 7px;
+    border: 2px solid lightgray;
+    padding-left: 5px;
+    max-width: 800px; 
+    font-size: large;
+  }
+
+  input:focus {
+    outline: none;
+  }
+  
+
+.info{
+    display: grid;
+    gap: 10px;
+}
+
+.data{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+}
+
+dialog{
+    border:2px solid #d5bdaf;
+    border-radius: 8px;
+}
+
+button{
+    background-color: #a3b18a;
+    min-width: 100px;
+    min-height: 30px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+
+}
+
+.button button:hover {
+    background-color: #8e9e78; /* Slightly darker shade */
+}
+
+.right{
+    display: grid;
+    grid-template-rows: 100px 1fr 75px;
+}
+
+.header{
+    padding: 20px;
+    text-align: start;
+    background-color: #66785F;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: x-large;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+footer{
+    text-align: center;
+    background-color: #D7D3BF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+.content{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,400px);
+    gap: 5px;
+}
+
+.card{
+    background-color: #dad7cd;
+    display: grid;
+    grid-template-rows: 20% 1fr;
+    padding: 10px;
+    height: 250px;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    width: 300px;
+    align-items: start;
+    justify-items: center;
+}
+
+.status{
+    display: flex;
+    gap: 10px;
+}
+
+.inner-card{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: large;
+}
+
+.card .title{
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.author-name::before{
+    content: "Author: ";
+}
+.pages::before{
+    content:'Pages: ';
+}
+
+/* ===========toggle style============= */
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjusts spacing between the label and toggle */
+}
+
+.toggle-slider {
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    display: none; /* Hides the default checkbox */
+}
+
+input[type="checkbox"]:checked + .toggle-slider {
+    background-color: #4caf50;
+}
+
+.toggle-slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.2s;
+}
+
+input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(14px); /* Moves the toggle to the right when checked */
+}
+
+/* ==================================== */
+

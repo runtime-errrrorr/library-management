@@ -22,6 +22,7 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: minmax(25%,350px) 1fr;
+    grid-template-rows: 1fr;
     background-color: #B2C9AD;
     margin: 0;
     padding: 0;
